@@ -13,13 +13,18 @@ import javax.servlet.http.HttpServletRequest;
 import com.wireless_order_server.dao.MenuDao;
 import com.wireless_order_server.entity.MenuBean;
 import com.wireless_order_server.util.DBconn;
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class MenuDaoImpl implements MenuDao {
 
 	/**
 	 * 查询菜单
 	 * @return
 	 */
+	@Override
 	public List<MenuBean> selectMenu()
 	{
 		List<MenuBean> l=new ArrayList<MenuBean>();
@@ -62,6 +67,7 @@ public class MenuDaoImpl implements MenuDao {
 	 * @param strPageNo
 	 * @return
 	 */
+	@Override
 	public boolean listMenu(HttpServletRequest request, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接
@@ -132,6 +138,7 @@ public class MenuDaoImpl implements MenuDao {
 	 * @param menuid
 	 * @return
 	 */
+	@Override
 	public MenuBean selectMenu(String menuid) {
 		// 创建数据库连接
 		DBconn dbconn = new DBconn();
@@ -169,6 +176,7 @@ public class MenuDaoImpl implements MenuDao {
 	 * @param mb
 	 * @return
 	 */
+	@Override
 	public boolean updateMenu(MenuBean mb) {
 		// 创建数据库连接
 		boolean a = false;
@@ -206,6 +214,7 @@ public class MenuDaoImpl implements MenuDao {
 	 * @param mb
 	 * @return
 	 */
+	@Override
 	public boolean insertMenu(MenuBean mb){
 		boolean b = false;
 		DBconn db = new DBconn();
@@ -240,6 +249,7 @@ public class MenuDaoImpl implements MenuDao {
 	 * @param typeid
 	 * @return
 	 */
+	@Override
 	public Map getMenusByTypeid(int typeid) {
 		DBconn db = new DBconn();
 		PreparedStatement pstmt = null;

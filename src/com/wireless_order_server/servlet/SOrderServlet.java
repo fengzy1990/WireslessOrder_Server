@@ -18,10 +18,15 @@ import com.wireless_order_server.dao.impl.OrderDaoImpl;
 import com.wireless_order_server.entity.MenuBean;
 import com.wireless_order_server.entity.MenuTypeBean;
 @WebServlet("/order.do")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class SOrderServlet extends HttpServlet {
 
 	public final static long serialVersionUID = 0;
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -87,7 +92,7 @@ public class SOrderServlet extends HttpServlet {
 				topage);
 		rd.forward(request, response);
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);

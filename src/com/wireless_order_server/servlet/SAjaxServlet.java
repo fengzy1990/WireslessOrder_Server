@@ -12,10 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
 @WebServlet("/ajax.do")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class SAjaxServlet extends HttpServlet {
 
 	public final static long serialVersionUID = 0;
-	
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {		
 		response.setContentType("text/xml");
@@ -31,7 +36,7 @@ public class SAjaxServlet extends HttpServlet {
 			out.print("<content>ok</content>");
 		}
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);

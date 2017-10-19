@@ -9,12 +9,17 @@ import java.util.List;
 import com.wireless_order_server.dao.MenuTypeDao;
 import com.wireless_order_server.entity.MenuTypeBean;
 import com.wireless_order_server.util.DBconn;
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class MenuTypeDaoImpl implements MenuTypeDao {
 
 	/**
 	 * 获得菜谱类型
 	 */
+	@Override
 	public List<MenuTypeBean> getMenuTypeList() {
 		
 		List<MenuTypeBean> l=new ArrayList<MenuTypeBean>();

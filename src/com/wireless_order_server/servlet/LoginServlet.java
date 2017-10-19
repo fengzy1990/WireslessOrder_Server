@@ -12,13 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
 
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class LoginServlet extends HttpServlet {
 
 	public LoginServlet() {
 		super();
 	}
 
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
@@ -28,12 +33,14 @@ public class LoginServlet extends HttpServlet {
 		UserDao dao = new UserDaoImpl();
 		boolean a = dao.login(username, password);
 		System.out.println(username);
-		if (a)
+		if (a) {
 			out.print("1");
-		else
+		} else {
 			out.print("0");
+		}
 	}
 
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 

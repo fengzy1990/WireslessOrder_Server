@@ -11,20 +11,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
+
 @WebServlet("/servlet/GetUserPemissionServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class GetUserPemissionServlet extends HttpServlet {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf8");
 		response.setCharacterEncoding("utf8");
 		response.setContentType("text/plain");

@@ -13,12 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.entity.UserBean;
 import com.wireless_order_server.util.DBconn;
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class UserDaoImpl implements UserDao {
 
 	/**
 	 * 前台登陆
 	 */
+	@Override
 	public boolean login(String username, String password) {
 		// TODO Auto-generated method stub
 		boolean a = false;
@@ -54,6 +59,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param shenfen
 	 * @return
 	 */
+	@Override
 	public boolean login(String username, String password, String shenfen) {
 		// TODO Auto-generated method stub
 		boolean a = false;
@@ -88,6 +94,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param u
 	 * @return
 	 */
+	@Override
 	public boolean insertUser(UserBean u) {
 		boolean a = false;
 		DBconn dbconn = new DBconn();
@@ -124,6 +131,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param userid
 	 * @return
 	 */
+	@Override
 	public int getUserPemission(String userid) {
 		int p = 0;
 		DBconn dbconn = new DBconn();
@@ -156,6 +164,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param userid
 	 * @return
 	 */
+	@Override
 	public boolean isExist(String userid) {
 		boolean isExist = false;
 		DBconn dbconn = new DBconn();
@@ -188,6 +197,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param strPageNo
 	 * @return
 	 */
+	@Override
 	public boolean listUsers(HttpServletRequest request, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接
@@ -257,6 +267,7 @@ public class UserDaoImpl implements UserDao {
 	 * @param userid
 	 * @return
 	 */
+	@Override
 	public boolean deleteUser(String userid) {
 		// 创建数据库连接
 		boolean a = false;
@@ -325,6 +336,7 @@ public class UserDaoImpl implements UserDao {
 	/**
 	 * 更新用户的权限
 	 */
+	@Override
 	public boolean updateUser(String userid) {
 		// 创建数据库连接
 		boolean a = false;
@@ -336,10 +348,12 @@ public class UserDaoImpl implements UserDao {
 			String sql = "update users set permission=? where user_id=?";
 			pstmt = conn.prepareStatement(sql);
 			int p = getUserPemission(userid);
-			if(p==0)
+			if(p==0){
 				pstmt.setInt(1, 1);
-			else
+				}
+			else{
 				pstmt.setInt(1, 0);
+			}
 			pstmt.setString(2, userid);
 			int b = pstmt.executeUpdate();
 			if (b > 0) {

@@ -20,8 +20,13 @@ import com.wireless_order_server.dao.impl.OrderDaoImpl;
 import com.wireless_order_server.dao.impl.OrderInfoDaoImpl;
 import com.wireless_order_server.entity.SumBean;
 @WebServlet("/servlet/GetOrderServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class GetOrderServlet extends HttpServlet {
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -53,7 +58,7 @@ public class GetOrderServlet extends HttpServlet {
 		out.write(array.toString());
 		System.out.print(array.toString());
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

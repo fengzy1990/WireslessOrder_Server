@@ -7,17 +7,17 @@ package com.wireless_order_server.entity;
  */
 public class DeskBean {
 
-	private int desk_id;
+	private int deskId;
 	private int flag;
 	private int num;
 	private String description;
 
-	public int getDesk_id() {
-		return desk_id;
+	public int getDeskId() {
+		return deskId;
 	}
 
-	public void setDesk_id(int desk_id) {
-		this.desk_id = desk_id;
+	public void setDeskId(int deskId) {
+		this.deskId = deskId;
 	}
 
 	public int getFlag() {

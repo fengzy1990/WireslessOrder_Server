@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
 import com.wireless_order_server.entity.UserBean;
+
 @WebServlet("/register.do")
 public class SRegisterServlet extends HttpServlet {
 
-public final static long serialVersionUID = 0;
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public final static long serialVersionUID = 0;
+
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf8");
 		// 取得参数
 		String username = request.getParameter("username");
@@ -35,7 +36,7 @@ public final static long serialVersionUID = 0;
 		ub.setPermission(Integer.parseInt(shenfen));
 		ub.setSex(Integer.parseInt(sex));
 		boolean isExist = ud.isExist(username);
-		if(!isExist) {
+		if (!isExist) {
 			ud.insertUser(ub);
 			response.sendRedirect("login.jsp");
 		} else {
@@ -43,8 +44,8 @@ public final static long serialVersionUID = 0;
 		}
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 

@@ -13,14 +13,19 @@ import com.wireless_order_server.dao.OrderInfoDao;
 import com.wireless_order_server.dao.impl.OrderInfoDaoImpl;
 import com.wireless_order_server.entity.OrderInfoBean;
 @WebServlet("/servlet/InsertDishServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class InsertDishServlet extends HttpServlet {
 
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setCharacterEncoding("utf8");

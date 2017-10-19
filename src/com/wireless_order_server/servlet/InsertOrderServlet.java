@@ -15,17 +15,22 @@ import com.wireless_order_server.dao.impl.DeskDaoImpl;
 import com.wireless_order_server.dao.impl.OrderDaoImpl;
 import com.wireless_order_server.entity.OrderTbBean;
 @WebServlet("/servlet/InsertOrderServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class InsertOrderServlet extends HttpServlet {
 
 	public InsertOrderServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setCharacterEncoding("utf8");

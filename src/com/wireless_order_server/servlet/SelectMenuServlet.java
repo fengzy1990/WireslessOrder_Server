@@ -24,7 +24,7 @@ public class SelectMenuServlet extends HttpServlet {
 	public SelectMenuServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -52,7 +52,7 @@ public class SelectMenuServlet extends HttpServlet {
 			response.getWriter().print(sbXml.toString());
 		}
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

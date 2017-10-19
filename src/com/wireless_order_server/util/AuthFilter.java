@@ -20,23 +20,21 @@ import javax.servlet.http.HttpSession;
  */
 
 public class AuthFilter implements Filter {
-
+	@Override
 	public void destroy() {
 
 	}
 
-	public void doFilter(ServletRequest servletRequest,
-			ServletResponse servletResponse, FilterChain filterChain)
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		String requestURI = request.getRequestURI();
 		System.out.println("requestURI" + requestURI);
-		String currentURI = requestURI.substring(requestURI.indexOf("/", 1),
-				requestURI.length());
+		String currentURI = requestURI.substring(requestURI.indexOf("/", 1), requestURI.length());
 		System.out.println("currentURI=" + currentURI);
-		if (!"/login.jsp".equals(currentURI)
-				&& !"/register.jsp".equals(currentURI)) {
+		if (!"/login.jsp".equals(currentURI) && !"/register.jsp".equals(currentURI)) {
 			HttpSession session = request.getSession(false);
 			if (session == null || session.getAttribute("username") == null) {
 				// System.out.println("username------>" +
@@ -49,6 +47,7 @@ public class AuthFilter implements Filter {
 		filterChain.doFilter(request, response);
 	}
 
+	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		System.out.println("---------filter init--------");
 

@@ -22,7 +22,7 @@ public class SelectDeskServlet extends HttpServlet {
 	public SelectDeskServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -32,7 +32,7 @@ public class SelectDeskServlet extends HttpServlet {
 		for (int i = 0; i < l.size(); i++) {
 			DeskBean bean = (DeskBean) l.get(i);
 			JSONObject obj = new JSONObject();
-			obj.put("deskid", bean.getDesk_id() + "");
+			obj.put("deskid", bean.getDeskId() + "");
 			obj.put("flag", bean.getFlag() + "");
 			obj.put("num", bean.getNum() + "");
 			array.add(obj);
@@ -44,7 +44,7 @@ public class SelectDeskServlet extends HttpServlet {
 		out.flush();
 		out.close();
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

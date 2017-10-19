@@ -22,7 +22,7 @@ public class SelectDeskNumServlet extends HttpServlet {
 	public SelectDeskNumServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -47,7 +47,7 @@ public class SelectDeskNumServlet extends HttpServlet {
 		out.close();
 
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

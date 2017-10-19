@@ -13,12 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import com.wireless_order_server.dao.DeskDao;
 import com.wireless_order_server.entity.DeskBean;
 import com.wireless_order_server.util.DBconn;
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class DeskDaoImpl implements DeskDao {
 
 	/**
 	 * 查询空桌号
 	 */
+	@Override
 	public List<DeskBean> selectDeskNum()
 	{
 		List<DeskBean> list=new ArrayList<DeskBean>();
@@ -51,6 +56,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * 查询所有的餐桌信息
 	 * @return
 	 */
+	@Override
 	public List<DeskBean> selectDesk()
 	{
 		List<DeskBean> l=new ArrayList<DeskBean>();
@@ -65,7 +71,7 @@ public class DeskDaoImpl implements DeskDao {
 			while(rs.next())
 			{
 				DeskBean d=new DeskBean();
-				d.setDesk_id(rs.getInt(1));
+				d.setDeskId(rs.getInt(1));
 				d.setFlag(rs.getInt(2));
 				d.setNum(rs.getInt(3));
 				l.add(d);
@@ -87,6 +93,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * @param deskid
 	 * @return
 	 */
+	@Override
 	public int selectDeskFlag(int deskid)
 	{
 		int f = 0;
@@ -123,6 +130,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * @param strPageNo
 	 * @return
 	 */
+	@Override
 	public boolean listDesks(HttpServletRequest request, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接
@@ -190,6 +198,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * @param deskid
 	 * @return
 	 */
+	@Override
 	public boolean deleteDesk(String deskid) {
 		// 创建数据库连接
 		boolean a = false;
@@ -222,6 +231,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * @param deskid
 	 * @return
 	 */
+	@Override
 	public DeskBean selectDesk(String deskid) {
 		// 创建数据库连接
 		DBconn dbconn = new DBconn();
@@ -236,7 +246,7 @@ public class DeskDaoImpl implements DeskDao {
 			pstmt.setInt(1, Integer.parseInt(deskid));
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				db.setDesk_id(rs.getInt(1));
+				db.setDeskId(rs.getInt(1));
 				db.setFlag(rs.getInt(2));
 				db.setNum(rs.getInt(3));
 				db.setDescription(rs.getString(4));
@@ -257,6 +267,7 @@ public class DeskDaoImpl implements DeskDao {
 	 * @param db
 	 * @return
 	 */
+	@Override
 	public boolean updateDesk(DeskBean db) {
 		// 创建数据库连接
 		boolean a = false;
@@ -269,7 +280,7 @@ public class DeskDaoImpl implements DeskDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, db.getFlag());
 			pstmt.setString(2, db.getDescription());
-			pstmt.setInt(3, db.getDesk_id());
+			pstmt.setInt(3, db.getDeskId());
 			int b = pstmt.executeUpdate();
 			if (b > 0) {
 				a = true;

@@ -24,6 +24,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param or
 	 * @return
 	 */
+	@Override
 	public boolean insertOrdeInfo(OrderInfoBean or) {
 		// TODO Auto-generated method stub
 		boolean b = false;
@@ -59,6 +60,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param o
 	 * @return
 	 */
+	@Override
 	public List<OrderBean> selectOrder(OrderInfoBean o) {
 		List<OrderBean> l = new ArrayList<OrderBean>();
 		DBconn db = new DBconn();
@@ -95,6 +97,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param orderid
 	 * @return
 	 */
+	@Override
 	public int countOrder(int orderid)
 	{
 		int a=0;
@@ -128,6 +131,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param or
 	 * @return
 	 */
+	@Override
 	public boolean deleteOrderinfo(OrderInfoBean or)
 	{
 		DBconn db=new DBconn();
@@ -169,6 +173,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param strPageNo
 	 * @return
 	 */
+	@Override
 	public boolean listOrderInfo(HttpServletRequest request, String orderid, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接
@@ -242,6 +247,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param id
 	 * @return
 	 */
+	@Override
 	public boolean deleteDish(String id){
 		// 创建数据库连接
 		boolean a = false;
@@ -274,6 +280,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param ob
 	 * @return
 	 */
+	@Override
 	public boolean insertOrderInfo(OrderInfoBean ob){
 		
 		boolean b = false;
@@ -309,6 +316,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param id
 	 * @return
 	 */
+	@Override
 	public OrderInfoBean selectOrderInfo(String id){
 		// 创建数据库连接
 		DBconn dbconn = new DBconn();
@@ -343,6 +351,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param id
 	 * @return
 	 */
+	@Override
 	public int getMenuTypeId(String id){
 		int t = 0;
 		DBconn db = new DBconn();
@@ -374,6 +383,7 @@ public class OrderInfoDaoImpl implements OrderInfoDao {
 	 * @param ob
 	 * @return
 	 */
+	@Override
 	public boolean updateOrderInfo(OrderInfoBean ob){
 		// 创建数据库连接
 		boolean a = false;

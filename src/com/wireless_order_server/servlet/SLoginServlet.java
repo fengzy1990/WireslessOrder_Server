@@ -13,12 +13,12 @@ import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
 @WebServlet("/login.do")
 public class SLoginServlet extends HttpServlet {
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

@@ -15,11 +15,17 @@ import com.wireless_order_server.entity.DeskBean;
 import com.wireless_order_server.entity.OrderTbBean;
 import com.wireless_order_server.util.DBconn;
 
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class OrderDaoImpl implements OrderDao {
 
 	/**
 	 * 添加订单
 	 */
+	@Override
 	public int insertOrder(OrderTbBean or) {
 		// TODO Auto-generated method stub
 		int a = -1, b = -1, c = -1;
@@ -66,6 +72,7 @@ public class OrderDaoImpl implements OrderDao {
 	 * @param or
 	 * @return
 	 */
+	@Override
 	public int getOrderid(OrderTbBean or) {
 		int a = -1;
 		DBconn db = new DBconn();
@@ -98,6 +105,7 @@ public class OrderDaoImpl implements OrderDao {
 	 * 
 	 * @return
 	 */
+	@Override
 	public List<String> getAllOrderid() {
 		List<String> l = new ArrayList<String>();
 		DBconn db = new DBconn();
@@ -129,6 +137,7 @@ public class OrderDaoImpl implements OrderDao {
 	 * @param or
 	 * @return
 	 */
+	@Override
 	public boolean payForOrder(OrderTbBean or) {
 		// TODO Auto-generated method stub
 		int a = -1, b = -1, c = -1;
@@ -156,8 +165,9 @@ public class OrderDaoImpl implements OrderDao {
 				}
 
 			}
-			if(c>0)
+			if(c>0){
 				return true;
+				}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -177,6 +187,7 @@ public class OrderDaoImpl implements OrderDao {
 	 * @param strPageNo
 	 * @return
 	 */
+	@Override
 	public boolean listOrders(HttpServletRequest request, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接

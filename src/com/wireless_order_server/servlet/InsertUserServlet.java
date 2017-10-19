@@ -13,6 +13,11 @@ import com.wireless_order_server.dao.UserDao;
 import com.wireless_order_server.dao.impl.UserDaoImpl;
 import com.wireless_order_server.entity.UserBean;
 @WebServlet("/servlet/InsertUserServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class InsertUserServlet extends HttpServlet {
 
 	/**
@@ -23,13 +28,13 @@ public class InsertUserServlet extends HttpServlet {
 	public InsertUserServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		doPost(request, response);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setCharacterEncoding("utf8");

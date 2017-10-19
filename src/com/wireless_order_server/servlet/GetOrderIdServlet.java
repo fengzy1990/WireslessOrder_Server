@@ -14,19 +14,23 @@ import com.wireless_order_server.dao.OrderDao;
 import com.wireless_order_server.dao.impl.OrderDaoImpl;
 import com.wireless_order_server.entity.OrderTbBean;
 @WebServlet("/servlet/GetOrderIdServle")
-
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class GetOrderIdServlet extends HttpServlet {
 
 	public GetOrderIdServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		doPost(request, response);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

@@ -13,12 +13,17 @@ import com.wireless_order_server.dao.OrderInfoDao;
 import com.wireless_order_server.dao.impl.OrderInfoDaoImpl;
 import com.wireless_order_server.entity.OrderInfoBean;
 @WebServlet("/servlet/DeleteMenuServlet")
+/**
+ * 
+ * @author FENGYUE
+ *
+ */
 public class DeleteMenuServlet extends HttpServlet {
 
 	public DeleteMenuServlet() {
 		super();
 	}
-
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("-------------doGet start--------------");
@@ -36,7 +41,7 @@ public class DeleteMenuServlet extends HttpServlet {
 		System.out.println(a);
 		out.print(a);
 	}
-
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
