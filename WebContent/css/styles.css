@@ -1,0 +1,79 @@
+BODY {
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 10pt;
+	LINE-HEIGHT: 10pt;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+TD {
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 10pt;
+}
+
+a:Link,a:Visited {
+	padding: 2px 1px 0px 0px;
+	color: #C10202;
+	text-decoration: underline;
+	LINE-HEIGHT: 15pt;
+}
+
+a:Hover,a:Active {
+	padding: 2px 1px 0px 0px;
+	color: #FFFFFF;
+	background: #739342;
+	text-decoration: none;
+}
+
+hr {
+	filter: alpha(opacity = 100, finishopacity = 2, style = 0);
+	height: 1px;
+}
+
+li {
+	color: #C10202;
+	list-style-type: square;
+	
+}
+
+ul {
+	margin-top:0px;
+	margin-bottom:5px;
+}
+
+.ulnotab {
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left: 16px;
+}
+
+form {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.position {
+	background-color: #ECF1FF;
+	height: 20px;
+}
+
+.tableheader {
+	background-color: #BEE1F4;
+	height: 20px;
+}
+
+.pager {
+	background-color: #E6E6E6;
+	height: 20px;
+}
+
+.highlight {
+	filter:glow(color=#FF9900,strength=5);height:1;
+}
+.guangyunzi {
+	color: #FFFFFF;
+	filter: Glow(Color=ff0000, Strength=8);
+}
